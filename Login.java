@@ -7,10 +7,11 @@ public class Login {
     public static void main(String[] args) {
         // TODO code application logic here
         String correctUsername = "Nelly";
-        String correctPassword = "12345";
+        String correctPassword = "AbcD";
         //scanner object for input
         Scanner scanner = new Scanner(System.in);
-        int attempts = 3;// user has 3 attempts
+        //user has 3 attempts
+        int attempts = 3;
         while (attempts > 0){
             //ask for username
             System.out.print("Enter username: ");
@@ -19,11 +20,11 @@ public class Login {
             System.out.print("Enter password: ");
             String password = scanner.nextLine();
             System.out.print("Password entered as: ");
-            for (int i=0;password.length(); i++){
+            for (int i=0; i< password.length(); i++){
                 System.out.print("*");
             }
             System.out.println();
-            //check if the username and password are correct
+            //check if username and password are correct
             if(username.equals(correctUsername) && password.equals(correctPassword)){
                 System.out.println("Login successful!");
                 break;
@@ -31,7 +32,8 @@ public class Login {
                 attempts--;//reduce attempts
                 System.out.println("Wrong username or password. Attempts left: " + attempts);
             }
-            if (attempts==0){//no attempts
+            //if no attempts left
+            if (attempts==0){
                 System.out.println("Login failed! No attempts remaining.");
             }
         }
